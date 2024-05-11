@@ -32,7 +32,6 @@ DerivedData/
 *.dblite
 
 ## Godot Plugins
-extracted_headers/*
 bin/*
 .vscode/*
 .github/*
