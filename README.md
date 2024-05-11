@@ -7,12 +7,12 @@ Based on [godot-ios-plugins](https://github.com/godotengine/godot-ios-plugins?ta
 
 ## Building the plugin .xcframeworkd
 
-- run the script below
+- run the script below with `4.2` or `4.3`
 
 ```bash
-./compileLocationPlugin.sh
+./compileLocationPlugin.sh 4.3
 ```
 
-resulting files are at bin/
+resulting plugin .xcframework will be at bin/
 
 
