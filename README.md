@@ -6,8 +6,9 @@
 Based on [godot-ios-plugins](https://github.com/godotengine/godot-ios-plugins?tab=readme-ov-file). Also see [iOS Plugin template](https://github.com/naithar/godot_ios_plugin).
 
 ## Building the plugin .xcframework
+- Place Godot headers from [Godot repo](https://github.com/godotengine/godot-ios-plugins/tree/master) at extracted_headers/godot_4.x. Make sure to follow steps [here](https://github.com/godotengine/godot-ios-plugins?tab=readme-ov-file).
 
-- run the script below with Godot version `4.2` or `4.3`to produce plugin .xcframework fils that's compatible the target Godot version. Example:
+- Run the script below with any Godot version as input to produce plugin debug and release .xcframework fils that're compatible with the target Godot version. Example:
 
 ```bash
 ./compileLocationPlugin.sh 4.3

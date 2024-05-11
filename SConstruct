@@ -25,10 +25,10 @@ opts.Add(BoolVariable('simulator', "Compilation platform", 'no'))
 opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
 opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'bin/'))
 opts.Add(EnumVariable('plugin', 'Plugin to build', '', ['', 'apn', 'arkit', 'camera', 'icloud', 'gamecenter', 'inappstore', 'photo_picker','PluginExample','Location']))
-opts.Add(EnumVariable('version', 'Godot version to target', '', ['4.2','4.3']))
-
+opts.Add('version', 'Godot version to target')
 # Updates the environment with the option variables.
 opts.Update(env)
+
 
 # Process some arguments
 if env['use_llvm']:
