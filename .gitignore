@@ -29,6 +29,7 @@ DerivedData/
 
 *.d
 *.o
+*.a
 *.dblite
 
 ## Godot Plugins
