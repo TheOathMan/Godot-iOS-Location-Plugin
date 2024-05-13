@@ -1,0 +1,18 @@
+[config]
+name="LocationPlugin"
+binary="Location.xcframework"
+
+initialization="location_plugin_init"
+deinitialization="location_plugin_deinit"
+
+[dependencies]
+linked=[]
+embedded=[]
+system=["CoreLocation.framework"]
+
+capabilities=[]
+
+files=[]
+
+[plist]
+NSLocationWhenInUseUsageDescription:string="Location access is needed to provide location-based features and services"
