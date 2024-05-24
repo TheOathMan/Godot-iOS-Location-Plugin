@@ -23,13 +23,14 @@ $LocationIOS.begin_ios_location_serivce()
 
 ```
 $LocationIOS.location_updated.connect(update_pin_position)
+```
 
 ## Building the plugin .xcframework
 - In order to build the plugin, we need Godot headers. For more details on how to get Godot headers see [Godot repo](https://github.com/godotengine/godot-ios-plugins/tree/master). Place the headers at extracted_headers/godot_4.x. Make sure to follow steps [here](https://github.com/godotengine/godot-ios-plugins?tab=readme-ov-file) for more details on how to compile the Godot headers.
 
 - Run the script below with any Godot 4.X version as an input to produce debug and release plugin(`.xcframework`) files that are compatible with the target Godot version. Example:
 
-```bash
+```
 ./compileLocationPlugin.sh 4.3
 ```
 
