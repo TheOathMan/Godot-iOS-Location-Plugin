@@ -2,8 +2,8 @@ class_name LocationIOS
 extends Node
 
 signal location_updated(Latitude:float,Longitude:float)
-signal location_status_changed(location_status:LocationServiceStatus)
-signal authorization_status_changed(authorization_status:AuthorizationStatus)
+signal location_status_updated(location_status:LocationServiceStatus)
+signal authorization_status_updated(authorization_status:AuthorizationStatus)
 signal dialogue_appeal_result(result:int)#0=cancel  1=ok
 
 enum AuthorizationStatus{
@@ -51,8 +51,8 @@ func _ready():
 	if Engine.has_singleton("LocationPlugin"):
 		location_plugin = Engine.get_singleton("LocationPlugin")
 		location_plugin.connect("LocationUpdated",_location_updated)
-		location_plugin.connect("AuthorizationStatusUpdated",_authorization_status_changed)
-		location_plugin.connect("LocationStatusUpdated",_location_status_changed)
+		location_plugin.connect("AuthorizationStatusUpdated",_authorization_status_updated)
+		location_plugin.connect("LocationStatusUpdated",_location_status_updated)
 		location_plugin.connect("DialogueResult",_dialogue_appeal_result)
 
 		#optional: show Location Permission Appeal dialogue if the user denied location access.
@@ -68,12 +68,12 @@ func _ready():
 func _location_updated(lat:float,lon:float):
 	location_updated.emit(lat,lon)
 
-func _authorization_status_changed(status:int):
-	authorization_status_changed.emit(status)
+func _authorization_status_updated(status:int):
+	authorization_status_updated.emit(status)
 	current_authorization_status=status
 
-func _location_status_changed(status:int):
-	location_status_changed.emit(status)
+func _location_status_updated(status:int):
+	location_status_updated.emit(status)
 	
 func _dialogue_appeal_result(result:int):
 	dialogue_appeal_result.emit(result)
